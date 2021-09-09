@@ -132,7 +132,8 @@ bool Cbnk::Convert(string cwarPath)
 {
 	uint8_t* pos = Data;
 
-	if (!Common::Assert(pos, 0x43424E4B, ReadFixLen(pos, 4, false))) { return false; }
+	if (!Common::Assert(pos, 0x43424E4B, ReadFixLen(pos, 4, false))) { 
+	if (!Common::Assert(pos, 0x46424E4B, ReadFixLen(pos, 4, false))) {return false;} }
 	if (!Common::Assert(pos, 0xFEFF, ReadFixLen(pos, 2))) { return false; }
 	if (!Common::Assert(pos, 0x20, ReadFixLen(pos, 2))) { return false; }
 
